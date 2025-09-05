@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBTISAM AZIZ | Frontend Developer</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- Space Background -->
+    <canvas id="canvas-bg"></canvas>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <h1>Hi, I'm Ibtisam Aziz</h1>
+            <div class=" typing-text" id="typingEffect">
+            </div>
+            <p>Junior Frontend Developer passionate about creating clean UI and improving my coding skills. Focused on
+                growth and practice.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="about">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>BitBlaze Tech LLC</h3>
+                        <p class="role">Junior Frontend Developer</p>
+                        <p>Worked on frontend development using HTML and CSS. Gained hands-on experience in building
+                            responsive layouts and clean UI components.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: BGG Foundation -->
+                <div class="project-card">
+                    <h3>BGG Foundation</h3>
+                    <p>A responsive nonprofit website built with clean HTML & CSS layout.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/ibtisam-aziz/BGG" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://ibtisam-aziz.github.io/BGG/" target="_blank" class="btn btn-small">
+                            <i class="fas fa-globe"></i> Live
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: LanX -->
+                <div class="project-card">
+                    <h3>LanX</h3>
+                    <p>A modern landing page designed with smooth effects and gradients.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/ibtisam-aziz/LanX" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://ibtisam-aziz.github.io/LanX/" target="_blank" class="btn btn-small">
+                            <i class="fas fa-globe"></i> Live
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Positvious -->
+                <div class="project-card">
+                    <h3>Positvious</h3>
+                    <p>A digital agency website boosting growth with smart online solutions.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/ibtisam-aziz/Positivus" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <span class="btn btn-small disabled" aria-disabled="true">
+                            <i class="fas fa-globe"></i> Live
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Cryptocurrency Page -->
+                <div class="project-card">
+                    <h3>Cryptocurrency Page</h3>
+                    <p>A sleek crypto dashboard showcasing real-time stats in a static layout.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/ibtisam-aziz/Cryptocurrency" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="https://ibtisam-aziz.github.io/Cryptocurrency/" target="_blank" class="btn btn-small">
+                            <i class="fas fa-globe"></i> Live
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Digital Project -->
+                <div class="project-card">
+                    <h3>Digital Project</h3>
+                    <p>A simple website sample created with a structured and basic design.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/ibtisam-aziz/Digital-project" target="_blank" class="btn btn-small">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <span class="btn btn-small disabled" aria-disabled="true">
+                            <i class="fas fa-globe"></i> Live
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Responsive Design</span>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form class="contact-form" action="https://formspree.io/f/xwpnwjqr" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="social-links">
+                <a href="mailto:ibtisam540295@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/ibtisam-aziz" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ibtisam-aziz-429614376/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Muhammad Ibtisam Aziz. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // === Typing Effect for Name (Once) ===
+        const nameText = "Hi, I'm Ibtisam Aziz";
+        const nameEl = document.querySelector("#hero h1");
+        let nameIndex = 0;
+
+        function typeName() {
+            if (nameIndex < nameText.length) {
+                nameEl.textContent = nameText.substring(0, nameIndex + 1);
+                nameIndex++;
+                setTimeout(typeName, 100); // Adjust speed (100ms per character)
+            } else {
+                // Start the rotating titles after name finishes
+                setTimeout(type, 500); // Small pause before typing subtitle
+            }
+        }
+
+        // === Rotating Subtitles (Looped) ===
+        const phrases = [
+            "Frontend Developer",
+            "Web Artisan",
+            "Clean Code Advocate"
+        ];
+        const typingEl = document.getElementById("typingEffect");
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+                typingEl.innerHTML = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+                if (charIndex <= 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 500);
+                } else {
+                    setTimeout(type, 50);
+                }
+            } else {
+                typingEl.innerHTML = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex > currentPhrase.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1500); // Hold full word for 1.5s
+                } else {
+                    setTimeout(type, 150);
+                }
+            }
+        }
+
+        // === Canvas Background (Space Stars) ===
+        const canvas = document.getElementById('canvas-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const stars = [];
+        const starCount = 200;
+
+        function initStars() {
+            for (let i = 0; i < starCount; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1.5 + 0.5,
+                    speed: Math.random() * 0.2 + 0.1,
+                    opacity: Math.random() * 0.5 + 0.3,
+                    twinkleSpeed: Math.random() * 2 + 1,
+                    twinkleOffset: Math.random() * 100
+                });
+            }
+        }
+
+        initStars();
+
+        function animateStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                const twinkle = Math.sin(Date.now() / 1000 * star.twinkleSpeed + star.twinkleOffset) * 0.5 + 0.5;
+                const finalOpacity = star.opacity * twinkle;
+
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${finalOpacity})`;
+                ctx.fill();
+            });
+            requestAnimationFrame(animateStars);
+        }
+
+        animateStars();
+
+        // === Scroll Progress Bar ===
+        function updateScrollProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        }
+
+        // === Animate Sections on Scroll ===
+        function animateSections() {
+            document.querySelectorAll("section").forEach(section => {
+                const top = section.getBoundingClientRect().top;
+                if (top < window.innerHeight * 0.8) {
+                    section.classList.add("visible");
+                }
+            });
+        }
+
+        // === Initialize on Load ===
+        window.addEventListener("load", () => {
+            typeName(); // Start typing the name
+            animateSections();
+        });
+
+        window.addEventListener("scroll", () => {
+            updateScrollProgress();
+            animateSections();
+        });
+
+        // === Hover Effect on Project Cards ===
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-12px) scale(1.09)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

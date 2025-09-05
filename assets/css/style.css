@@ -1,0 +1,589 @@
+/* === style.css === */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0014;
+  color: #e0e0ff;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* === Canvas Background (Space Stars) === */
+#canvas-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* === Scroll Progress Bar === */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(to right, #a070ff, #8a2be2);
+  width: 0%;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(160, 112, 255, 0.6);
+}
+
+/* === Container === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* === Sections Animation === */
+section {
+  padding: 5rem 0;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Headings === */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 3.6rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #d0a0ff, #a070ff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(160, 112, 255, 0.2);
+}
+
+h2 {
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+
+h2:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(to right, #a070ff, #8a2be2);
+  margin: 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(160, 112, 255, 0.4);
+}
+
+/* === Paragraphs & Links === */
+p {
+  margin-bottom: 1rem;
+  color: #c5c5f0;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #d0a0ff;
+  text-shadow: 0 0 5px rgba(160, 112, 255, 0.3);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(160, 112, 255, 0.6);
+}
+
+/* === Main Button (Hero, Contact) === */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #a070ff, #8a2be2);
+  color: white;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(160, 112, 255, 0.4);
+  transition: all 0.3s ease;
+  margin-top: 1.2rem;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+/* === Disabled Button (Matches Active Button Size & Style) === */
+.btn-small.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  
+  /* Match active button style */
+  display: inline-flex;        /* Match <a> layout */
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  
+  padding: 8px 14px !important; /* Same as active */
+  border-radius: 20px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: #c5c5f0 !important;
+  
+  /* Match background & remove glow */
+  background: rgba(160, 112, 255, 0.1) !important;
+  box-shadow: none !important;
+  border: none;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(160, 112, 255, 0.6);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* === Project Buttons: Icon Spin + Glow + Lift on Hover === */
+.project-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-buttons a {
+  text-decoration: none !important;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #9a60e0, #7a40cc);
+  color: white;
+  box-shadow: 0 3px 10px rgba(160, 112, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.project-buttons a i {
+  font-size: 0.9rem;
+  margin-right: 6px;
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+.project-buttons a:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 
+    0 8px 20px rgba(160, 112, 255, 0.6),
+    0 0 25px rgba(160, 112, 255, 0.4),
+    0 0 40px rgba(160, 112, 255, 0.2);
+  background: linear-gradient(135deg, #a070ff, #8a2be2);
+  color: white;
+}
+
+.project-buttons a:hover i {
+  transform: rotate(360deg) scale(1.25);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+}
+
+/* Subtle Glow Pulse on Hover */
+.project-buttons a::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: radial-gradient(
+    circle at center,
+    rgba(160, 112, 255, 0.3) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+.project-buttons a:hover::after {
+  opacity: 1;
+}
+
+/* Responsive: Stack buttons on mobile */
+@media (max-width: 600px) {
+  .project-buttons {
+    flex-direction: unset;
+    align-items: center;
+  }
+
+  .project-buttons a {
+    width: fit-content;
+    margin: 1px auto;
+  }
+}
+
+/* === Hero Section === */
+#hero {
+  text-align: center;
+  padding: 8rem 0 6rem;
+  overflow: hidden; /* Prevent overflow on small screens */
+  position: relative;
+}
+
+/* === Responsive Typing Text === */
+.typing-text {
+  font-size: 2rem;          /* Desktop */
+  font-weight: 700;
+  color: #a070ff;
+  margin: 1.2rem 0;         /* Reduced margin */
+  min-height: 1.5em;        /* Prevents layout jump */
+  text-shadow: 0 0 10px rgba(160, 112, 255, 0.4);
+  line-height: 1.4;
+}
+
+/* === Mobile: Smaller Text & Spacing === */
+@media (max-width: 768px) {
+  .typing-text {
+    font-size: 1.6rem !important; /* Smaller on mobile */
+    margin: 1rem 0;
+    min-height: 1.4em;
+  }
+.btn-small{
+  margin: 1px auto;
+}
+  #hero {
+    padding: 6rem 0 5rem;   /* Reduce hero padding */
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  footer {
+
+    padding: 2rem 0 2rem;
+}
+.btn-small.disabled{
+  margin: 1px auto;
+}
+
+}
+
+/* === Extra Small Devices (e.g., iPhone SE) === */
+@media (max-width: 480px) {
+  .container{
+    width: 100%;
+    padding: 0;
+  }
+  .typing-text {
+    font-size: 1.4rem !important;
+    margin: 0.8rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #hero {
+    padding: 5rem 1rem 4rem;
+  }
+}
+
+/* === Projects Grid === */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* === Project Card === */
+.project-card {
+  background: rgba(40, 0, 70, 0.4);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(160, 112, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to right, #a070ff, #8a2be2);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.08);
+  box-shadow: 0 15px 40px rgba(160, 112, 255, 0.35);
+  border-color: rgba(160, 112, 255, 0.6);
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* === Project Image === */
+.project-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* === Timeline === */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(to bottom, #a070ff, #8a2be2);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(160, 112, 255, 0.4);
+}
+
+.timeline-item {
+  padding: 30px 0;
+  width: 50%;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-content {
+  padding: 24px;
+  background: rgba(40, 0, 70, 0.4);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(160, 112, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 350px;
+}
+
+.timeline-content h3 {
+  color: #d0a0ff;
+}
+
+.role {
+  color: #a070ff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* === Skills === */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.skill-tag {
+  background: rgba(160, 112, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: 1px solid rgba(160, 112, 255, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  background: rgba(160, 112, 255, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(160, 112, 255, 0.3);
+}
+
+/* === Contact Form === */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(40, 0, 70, 0.4);
+  padding: 2.5rem;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(160, 112, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.7rem;
+  color: #d0a0ff;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(160, 112, 255, 0.4);
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #a070ff;
+  box-shadow: 0 0 15px rgba(160, 112, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* === Social Links === */
+.social-links {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 1.8rem;
+}
+
+.social-links a {
+  margin: 0 20px;
+  color: #a070ff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff80ff;
+  transform: scale(1.3) rotate(10deg);
+  text-shadow: 0 0 15px rgba(160, 112, 255, 0.6);
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  color: #a070ff;
+  font-size: 1.1rem;
+  border-top: 1px solid rgba(160, 112, 255, 0.2);
+  margin-top: 2rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+
+section{
+  padding: 60px 20px;
+}
+
+  h1 {
+    font-size: 30px;
+  }
+h2 {
+        font-size: 26px;
+        margin-bottom: 2rem;
+    }
+.project-buttons {
+    gap: 8px;
+      
+}
+  .timeline::after {
+    left: 30px;
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+  }
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+.btn {
+    padding: 8px 20px;
+    border-radius: 40px;
+    margin-top: 10px;
+} 
+.btn a{
+  font-size: 14px;
+}
+
+
+
+
+}
