@@ -275,11 +275,11 @@ a:hover {
 
 /* === Responsive Typing Text === */
 .typing-text {
-  font-size: 2rem;          /* Desktop */
+  font-size: 2rem;          
   font-weight: 700;
   color: #a070ff;
   margin: 1.2rem 0;         /* Reduced margin */
-  min-height: 1.5em;        /* Prevents layout jump */
+  min-height: 1.5em;       
   text-shadow: 0 0 10px rgba(160, 112, 255, 0.4);
   line-height: 1.4;
 }
@@ -295,7 +295,7 @@ a:hover {
   margin: 1px auto;
 }
   #hero {
-    padding: 6rem 0 5rem;   /* Reduce hero padding */
+    padding: 6rem 0 5rem;   
   }
 
   .btn {
@@ -584,9 +584,23 @@ h2 {
 .btn a{
   font-size: 14px;
 }
+  .project-card {
+    transition: none !important;       
+    pointer-events: none !important;   
+  }
+
+  .project-card:hover,
+  .project-card:hover::before {
+    all: unset !important;           
+  }
+
+  .project-card .project-buttons a {
+    pointer-events: auto !important;   
+  }
 
 
 
 
 
 }
+
