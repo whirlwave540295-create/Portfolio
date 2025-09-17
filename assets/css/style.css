@@ -576,8 +576,8 @@ h2 {
   .project-card:hover,
   .project-card:hover::before {
     transform: none !important;       /* no scale/translate/line */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important; /* default shadow */
-    border-color: rgba(160, 112, 255, 0.3) !important;    /* default border */
+   box-shadow: none !important;     
+    border-color: transparent !important;
   }
 
   /* re-enable only the inner links */
@@ -589,5 +589,6 @@ h2 {
 
 
 }
+
 
 
